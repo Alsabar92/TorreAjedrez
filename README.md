@@ -5,7 +5,7 @@
 La tarea va a consistir en modelar el movimiento de una torre de ajedrez por el tablero de dicho juego.
 <div align="center">
 <p>
-![Colocación inicial de los alfiles](src/main/resources/posicionInicialTorre.png)
+![Colocación inicial de los alfiles]<img src="src/main/resources/posicionInicialTorre.png"/>
 ![Movimiento de los alfiles](src/main/resources/movimientoTorre.png)
 </p>
 <p style="text-size: xx-small">Imágenes obtenidas de la web: [123ajedrez.com](https://www.123ajedrez.com/reglas-basicas/la-torre) (Enrique Moreno)</p>
