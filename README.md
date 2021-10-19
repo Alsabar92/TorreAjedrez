@@ -4,10 +4,10 @@
 
 La tarea va a consistir en modelar el movimiento de una torre de ajedrez por el tablero de dicho juego.
 <div align="center">
-<p>
+
 <img src="src/main/resources/posicionInicialTorre.png"/>
 <img src="src/main/resources/movimientoTorre.png"/>
-</p>
+
 <p style="text-size: xx-small">Imágenes obtenidas de la web: [123ajedrez.com](https://www.123ajedrez.com/reglas-basicas/la-torre) (Enrique Moreno)</p>
 </div>
 
@@ -20,8 +20,6 @@ En la segunda imagen puedes apreciar cuáles son los movimientos válidos para u
 <img src="src/main/resources/PosicionSinEnroque.png" width="238" height="238"/>
 <img src="src/main/resources/Enroque.png" width="238" height="238"/>
 <img src="src/main/resources/EnroqueCortoYLargo.png" width="238" height="238"/>
-</p>
-</div>
 <p style="text-size: xx-small">Imágenes obtenidas de la web: [123ajedrez.com](https://www.123ajedrez.com/reglas-basicas/enroque) (Enrique Moreno)</p>
 </div>
 
