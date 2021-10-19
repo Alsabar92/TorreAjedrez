@@ -16,11 +16,12 @@ En la primera imagen puedes observar cuál es el posicionamiento inicial válido
 En la segunda imagen puedes apreciar cuáles son los movimientos válidos para una torre. Además, de estos movimientos mostrados en la imagen, otro posible movimiento de la torre es el conocido como enroque, pudiendo ser un enroque corto o un enroque largo:
 </div>
 
-<p>
+<div align="center">
 <img src="src/main/resources/PosicionSinEnroque.png" width="238" height="238"/>
 <img src="src/main/resources/Enroque.png" width="238" height="238"/>
 <img src="src/main/resources/EnroqueCortoYLargo.png" width="238" height="238"/>
 </p>
+</div>
 <p style="text-size: xx-small">Imágenes obtenidas de la web: [123ajedrez.com](https://www.123ajedrez.com/reglas-basicas/enroque) (Enrique Moreno)</p>
 </div>
 
