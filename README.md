@@ -17,7 +17,7 @@ En la segunda imagen puedes apreciar cuáles son los movimientos válidos para u
 </div>
 
 <p>
-<img src="src/main/resources/PosicionSinEnroque.png" width="328"/>
+<img src="src/main/resources/PosicionSinEnroque.png" width="328" height="328"/>
 <img src="src/main/resources/Enroque.png" width="328"/>
 <img src="src/main/resources/EnroqueCortoYLargo.png" width="328"/>
 </p>
