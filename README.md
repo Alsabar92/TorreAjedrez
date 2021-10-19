@@ -18,7 +18,7 @@ En la segunda imagen puedes apreciar cuáles son los movimientos válidos para u
 
 <p>
 <img src="src/main/resources/PosicionSinEnroque.png"/>
-<img src="src/main/resources/Enroque.png"/>
+<img src="src/main/resources/Enroque.png" width="372"/>
 <img src="src/main/resources/EnroqueCortoYLargo.png"/>
 </p>
 <p style="text-size: xx-small">Imágenes obtenidas de la web: [123ajedrez.com](https://www.123ajedrez.com/reglas-basicas/enroque) (Enrique Moreno)</p>
