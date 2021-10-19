@@ -27,7 +27,7 @@ En la segunda imagen puedes apreciar cuáles son los movimientos válidos para u
 En este repositorio hay un esqueleto de proyecto gradle que ya lleva incluidos todos los test necesarios que el programa debe pasar.
 
 Para ello te pongo un diagrama de clases para el mismo y poco a poco te iré explicando los diferentes pasos a seguir:
-<div align="center">!![Diagrama de clases para torre de ajedrez](src/main/resources/TorreAjedrez.png)
+<div align="center"><img src="src/main/resources/TorreAjedrez.png" alt="Diagrama de clases para torre de ajedrez"/>
 </div>
 
 1. Lo primero que debes hacer es un fork del repositorio donde he colocado el esqueleto de este proyecto.
