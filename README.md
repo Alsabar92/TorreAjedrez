@@ -8,7 +8,7 @@ La tarea va a consistir en modelar el movimiento de una torre de ajedrez por el 
 <img src="src/main/resources/posicionInicialTorre.png"/>
 <img src="src/main/resources/movimientoTorre.png"/>
 
-<p style="text-size: xx-small">Imágenes obtenidas de la web: [123ajedrez.com](https://www.123ajedrez.com/reglas-basicas/la-torre) (Enrique Moreno)</p>
+<p style="font-size: xx-small">Imágenes obtenidas de la web: (https://www.123ajedrez.com/reglas-basicas/la-torre) (Enrique Moreno)</p>
 </div>
 
 En la primera imagen puedes observar cuál es el posicionamiento inicial válido para las torres dependiendo de su color.
@@ -20,7 +20,7 @@ En la segunda imagen puedes apreciar cuáles son los movimientos válidos para u
 <img src="src/main/resources/PosicionSinEnroque.png" width="238" height="238"/>
 <img src="src/main/resources/Enroque.png" width="238" height="238"/>
 <img src="src/main/resources/EnroqueCortoYLargo.png" width="238" height="238"/>
-<p style="text-size: xx-small">Imágenes obtenidas de la web: [123ajedrez.com](https://www.123ajedrez.com/reglas-basicas/enroque) (Enrique Moreno)</p>
+<p style="font-size: xx-small">Imágenes obtenidas de la web: (https://www.123ajedrez.com/reglas-basicas/enroque) (Enrique Moreno)</p>
 </div>
 
 En este repositorio hay un esqueleto de proyecto gradle que ya lleva incluidos todos los test necesarios que el programa debe pasar.
