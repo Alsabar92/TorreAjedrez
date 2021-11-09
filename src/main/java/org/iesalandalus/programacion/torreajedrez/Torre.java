@@ -6,6 +6,15 @@ public class Torre {
 	private Posicion posicion;
 	
 	
+	//Constructores
+	//Constructor por defecto
+	public Torre() {
+		setColor(Color.NEGRO);
+		setPosicion(new Posicion(8, 'h'));
+	}
+	
+	
+	
 	// Creamos setters y getters
 	public Color getColor() {
 		return color;
