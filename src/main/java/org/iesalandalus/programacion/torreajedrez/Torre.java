@@ -1,5 +1,7 @@
 package org.iesalandalus.programacion.torreajedrez;
 
+import javax.naming.OperationNotSupportedException;
+
 public class Torre {
 	// Atributos
 	private Color color;
@@ -62,5 +64,90 @@ public class Torre {
 	
 	public void setPosicion(Posicion posicion) { //DUDA
 		this.posicion=posicion;
+	}
+	
+	//Métodos
+	//Métodos
+	//Método mover
+	public void mover (Direccion direccion, int pasos) throws OperationNotSupportedException {
+		if (pasos < 1) 
+		{
+			throw new IllegalArgumentException("ERROR: Los pasos no pueden ser 0 o negativo");
+		} else if (direccion==null)
+		{
+			throw new NullPointerException("ERROR: La dirección no puede ser nula");
+		}
+		switch (direccion) {
+			case ARRIBA:
+				if (color==Color.NEGRO)
+				{
+					try {
+						setPosicion(new Posicion(posicion.getFila() -pasos , posicion.getColumna()));
+					} catch (IllegalArgumentException e) {
+						throw new OperationNotSupportedException("ERROR: La ficha sale del tablero");
+					}
+				} else
+				{
+					try {
+						setPosicion(new Posicion(posicion.getFila() +pasos , posicion.getColumna()));
+					} catch (IllegalArgumentException e) {
+						throw new OperationNotSupportedException("ERROR: La ficha sale del tablero");
+					}
+				}
+			break;
+			case ABAJO:
+				if (color==Color.NEGRO)
+				{
+					try {
+						setPosicion(new Posicion(posicion.getFila() +pasos , posicion.getColumna()));
+					} catch (IllegalArgumentException e) {
+						throw new OperationNotSupportedException("ERROR: La ficha sale del tablero");
+					}
+				} else
+				{
+					try {
+						setPosicion(new Posicion(posicion.getFila() -pasos , posicion.getColumna()));
+					} catch (IllegalArgumentException e) {
+						throw new OperationNotSupportedException("ERROR: La ficha sale del tablero");
+					}
+				}
+			break;
+			case IZQUIERDA:
+				if (color==Color.NEGRO)
+				{
+					try {
+						setPosicion(new Posicion(posicion.getFila() , (char)(posicion.getColumna() +pasos)));
+					} catch (IllegalArgumentException e) {
+						throw new OperationNotSupportedException("ERROR: La ficha sale del tablero");
+					}
+				} else
+				{
+					try {
+						setPosicion(new Posicion(posicion.getFila() , (char)(posicion.getColumna() -pasos)));
+					} catch (IllegalArgumentException e) {
+						throw new OperationNotSupportedException("ERROR: La ficha sale del tablero");
+					}
+				}
+			break;
+			case DERECHA:
+				if (color==Color.NEGRO)
+				{
+					try {
+						setPosicion(new Posicion(posicion.getFila() , (char)(posicion.getColumna() -pasos)));
+					} catch (IllegalArgumentException e) {
+						throw new OperationNotSupportedException("ERROR: La ficha sale del tablero");
+					}
+				} else
+				{
+					try {
+						setPosicion(new Posicion(posicion.getFila() , (char)(posicion.getColumna() +pasos)));
+					} catch (IllegalArgumentException e) {
+						throw new OperationNotSupportedException("ERROR: La ficha sale del tablero");
+					}
+				}
+			break;
+			default:
+				throw new NullPointerException("ERROR: La dirección no puede ser nula");
+		}
 	}
 }
