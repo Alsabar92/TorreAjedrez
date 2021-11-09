@@ -150,4 +150,24 @@ public class Torre {
 				throw new NullPointerException("ERROR: La dirección no puede ser nula");
 		}
 	}
+	
+	//Método de enroque
+	public void enrocar (Direccion direccion) {
+		switch (direccion) {
+		case ENROQUE_CORTO:
+			if (posicion.getColumna()=='H' && (posicion.getFila()==1 || posicion.getFila()==8))
+			{
+				setPosicion(new Posicion(posicion.getFila(),'F'));
+			}
+			break;
+		case ENROQUE_LARGO:
+			if (posicion.getColumna()=='A' && (posicion.getFila()==1 || posicion.getFila()==8))
+			{
+				setPosicion(new Posicion(posicion.getFila(),'D'));
+			}
+			break;
+			default:
+				throw new NullPointerException("ERROR: La direcci�n no puede ser nula");
+		}
+	}
 }
