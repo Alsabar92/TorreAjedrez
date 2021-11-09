@@ -96,6 +96,12 @@ public class Posicion {
 		Posicion other = (Posicion) obj;
 		return columna == other.columna && fila == other.fila;
 	}
+
+	//Método toString
+	@Override
+	public String toString() {
+		return "Posicion [fila=" + fila + ", columna=" + columna + "]";
+	}
 	
 	
 	
