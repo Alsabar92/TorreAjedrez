@@ -31,7 +31,7 @@ public class Posicion {
 	public void setFila(int fila) {
 		if (fila < MIN_FILA || fila > MAX_FILA ) 
 		{
-			throw new IllegalArgumentException("ERROR: Fila no válida");
+			throw new IllegalArgumentException("ERROR: Fila no válida.");
 		} else 
 		{
 			this.fila = fila;
@@ -43,8 +43,9 @@ public class Posicion {
 	public void setColumna(char columna) {
 		if (columna!='a' && columna!='b' && columna!='c' && columna!='d' && columna!='e' && columna!='f' && columna!='g' && columna!='h' && columna!='A' && columna!='B' && columna!='C' && columna!='D' && columna!='E' && columna!='F' && columna!='G' && columna!='H')
 		{
-			throw new IllegalArgumentException("ERROR: La columna no es correcta");
+			throw new IllegalArgumentException("ERROR: Columna no válida.");
 		}
+	
 		else {
 			// Comprobamos si se ha introducido la columna en mayúscula y si es así, la convertimos a minúscula. La opción default mantiene la solución, dado que tenemos validada la entrada desde el if.
 			switch (columna) {
@@ -100,7 +101,7 @@ public class Posicion {
 	//Método toString
 	@Override
 	public String toString() {
-		return "Posicion [fila=" + fila + ", columna=" + columna + "]";
+		return "fila=" + fila + ", columna=" + columna;
 	}
 	
 	
