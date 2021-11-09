@@ -19,6 +19,10 @@ public class Posicion {
 	
 	// Constructor copia
 	public Posicion (Posicion e) {
+		if (e == null)
+		{
+			throw new NullPointerException("ERROR: No es posible copiar una posición nula.");
+		}
 		setFila(e.getFila());
 		setColumna(e.getColumna());
 	}
@@ -32,7 +36,7 @@ public class Posicion {
 		if (fila < MIN_FILA || fila > MAX_FILA ) 
 		{
 			throw new IllegalArgumentException("ERROR: Fila no válida.");
-		} else 
+		} else
 		{
 			this.fila = fila;
 		}
