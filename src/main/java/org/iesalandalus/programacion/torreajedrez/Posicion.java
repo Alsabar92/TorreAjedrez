@@ -15,6 +15,12 @@ public class Posicion {
 		setColumna(columna);
 	}
 	
+	// Constructor copia
+	public Posicion (Posicion e) {
+		setFila(e.getFila());
+		setColumna(e.getColumna());
+	}
+	
 	
 	
 	//Getters y Setters
