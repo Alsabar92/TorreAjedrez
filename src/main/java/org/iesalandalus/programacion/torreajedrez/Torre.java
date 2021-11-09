@@ -55,7 +55,7 @@ public class Torre {
 	public void setColor(Color color) {
 		if (color == null)
 		{
-			throw new NullPointerException("ERROR: Columna no v�lida.");
+			throw new NullPointerException("ERROR: No se puede asignar un color nulo.");
 		}
 		this.color = color;
 	}
@@ -74,10 +74,10 @@ public class Torre {
 	public void mover (Direccion direccion, int pasos) throws OperationNotSupportedException {
 		if (pasos < 1) 
 		{
-			throw new IllegalArgumentException("ERROR: Los pasos no pueden ser 0 o negativo");
+			throw new IllegalArgumentException("ERROR: El número de pasos debe ser positivo.");
 		} else if (direccion==null)
 		{
-			throw new NullPointerException("ERROR: La dirección no puede ser nula");
+			throw new NullPointerException("ERROR: La dirección no puede ser nula.");
 		}
 		switch (direccion) {
 			case ARRIBA:
@@ -86,14 +86,14 @@ public class Torre {
 					try {
 						setPosicion(new Posicion(posicion.getFila() -pasos , posicion.getColumna()));
 					} catch (IllegalArgumentException e) {
-						throw new OperationNotSupportedException("ERROR: La ficha sale del tablero");
+						throw new OperationNotSupportedException("ERROR: Movimiento no válido (se sale del tablero).");
 					}
 				} else
 				{
 					try {
 						setPosicion(new Posicion(posicion.getFila() +pasos , posicion.getColumna()));
 					} catch (IllegalArgumentException e) {
-						throw new OperationNotSupportedException("ERROR: La ficha sale del tablero");
+						throw new OperationNotSupportedException("ERROR: Movimiento no válido (se sale del tablero).");
 					}
 				}
 			break;
@@ -103,14 +103,14 @@ public class Torre {
 					try {
 						setPosicion(new Posicion(posicion.getFila() +pasos , posicion.getColumna()));
 					} catch (IllegalArgumentException e) {
-						throw new OperationNotSupportedException("ERROR: La ficha sale del tablero");
+						throw new OperationNotSupportedException("ERROR: Movimiento no válido (se sale del tablero).");
 					}
 				} else
 				{
 					try {
 						setPosicion(new Posicion(posicion.getFila() -pasos , posicion.getColumna()));
 					} catch (IllegalArgumentException e) {
-						throw new OperationNotSupportedException("ERROR: La ficha sale del tablero");
+						throw new OperationNotSupportedException("ERROR: Movimiento no válido (se sale del tablero).");
 					}
 				}
 			break;
@@ -120,14 +120,14 @@ public class Torre {
 					try {
 						setPosicion(new Posicion(posicion.getFila() , (char)(posicion.getColumna() +pasos)));
 					} catch (IllegalArgumentException e) {
-						throw new OperationNotSupportedException("ERROR: La ficha sale del tablero");
+						throw new OperationNotSupportedException("ERROR: Movimiento no válido (se sale del tablero).");
 					}
 				} else
 				{
 					try {
 						setPosicion(new Posicion(posicion.getFila() , (char)(posicion.getColumna() -pasos)));
 					} catch (IllegalArgumentException e) {
-						throw new OperationNotSupportedException("ERROR: La ficha sale del tablero");
+						throw new OperationNotSupportedException("ERROR: Movimiento no válido (se sale del tablero).");
 					}
 				}
 			break;
@@ -137,14 +137,14 @@ public class Torre {
 					try {
 						setPosicion(new Posicion(posicion.getFila() , (char)(posicion.getColumna() -pasos)));
 					} catch (IllegalArgumentException e) {
-						throw new OperationNotSupportedException("ERROR: La ficha sale del tablero");
+						throw new OperationNotSupportedException("ERROR: Movimiento no válido (se sale del tablero).");
 					}
 				} else
 				{
 					try {
 						setPosicion(new Posicion(posicion.getFila() , (char)(posicion.getColumna() +pasos)));
 					} catch (IllegalArgumentException e) {
-						throw new OperationNotSupportedException("ERROR: La ficha sale del tablero");
+						throw new OperationNotSupportedException("ERROR: Movimiento no válido (se sale del tablero).");
 					}
 				}
 			break;
@@ -154,22 +154,29 @@ public class Torre {
 	}
 	
 	//Método de enroque
-	public void enrocar (Direccion direccion) {
+	public void enrocar (Direccion direccion) throws OperationNotSupportedException {
+		if (direccion==null) {
+			throw new NullPointerException("ERROR: La dirección no puede ser nula.");
+		}
 		switch (direccion) {
 		case ENROQUE_CORTO:
 			if (posicion.getColumna()=='H' && (posicion.getFila()==1 || posicion.getFila()==8))
 			{
 				setPosicion(new Posicion(posicion.getFila(),'F'));
+			} else 
+			{
+				throw new OperationNotSupportedException("ERROR: Movimiento de enroque no válido.");
 			}
 			break;
 		case ENROQUE_LARGO:
 			if (posicion.getColumna()=='A' && (posicion.getFila()==1 || posicion.getFila()==8))
 			{
 				setPosicion(new Posicion(posicion.getFila(),'D'));
-			}
+			}else 
+			{
+				throw new OperationNotSupportedException("ERROR: Movimiento de enroque no válido.");
+			} 
 			break;
-			default:
-				throw new NullPointerException("ERROR: La direcci�n no puede ser nula");
 		}
 	}
 	
@@ -194,6 +201,6 @@ public class Torre {
 	// Método toString
 	@Override
 	public String toString() {
-		return "Torre [color=" + color + ", posicion=" + posicion + "]";
+		return "fila=" + posicion.getFila() + ", columna=" + posicion.getColumna() + ", color=" + color;
 	}
 }
