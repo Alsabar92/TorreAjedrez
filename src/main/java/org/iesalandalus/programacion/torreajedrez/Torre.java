@@ -190,4 +190,10 @@ public class Torre {
 		Torre other = (Torre) obj;
 		return color == other.color && Objects.equals(posicion, other.posicion);
 	}
+	
+	// Método toString
+	@Override
+	public String toString() {
+		return "Torre [color=" + color + ", posicion=" + posicion + "]";
+	}
 }
