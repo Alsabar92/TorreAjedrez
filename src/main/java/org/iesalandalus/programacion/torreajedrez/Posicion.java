@@ -8,6 +8,15 @@ public class Posicion {
 	private final int MAX_FILA=8;
 	
 	
+	//Constructores
+	//Constructor con parámetros de entrada
+	public Posicion (int fila, char columna) {
+		setFila(fila);
+		setColumna(columna);
+	}
+	
+	
+	
 	//Getters y Setters
 	public int getFila() {
 		return fila;
