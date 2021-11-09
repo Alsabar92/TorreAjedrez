@@ -25,6 +25,23 @@ public class Torre {
 		}
 	}
 	
+	//Constructor con parámetros de entrada de Color y Columna
+	public Torre(Color color, char columna) {
+		setColor(color);
+		
+		if (columna=='A' || columna=='H' || columna=='a' || columna == 'h') 
+		{
+			if (color==Color.BLANCO) 
+			{
+				setPosicion(new Posicion(1,columna));
+			} else
+			{
+				setPosicion(new Posicion(8,columna));
+			}
+		} else
+			throw new IllegalArgumentException("ERROR: Columna no válida.");
+	}
+	
 	
 	// Creamos setters y getters
 	public Color getColor() {
