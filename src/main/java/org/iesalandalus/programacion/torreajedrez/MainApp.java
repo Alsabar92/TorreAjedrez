@@ -8,8 +8,12 @@ public class MainApp {
 	private static Torre torre;
 	
 	public static void main(String[] args) {
-		boolean apagado=false;
+		int control=1;
 		int selector;
+		System.out.println("=====================================");
+		System.out.println("Programa simulador. Torre de Ajedrez.");
+		System.out.println("=====================================");
+		
 		do {
 			mostrarMenu();
 			selector=elegirOpcion();
@@ -17,9 +21,9 @@ public class MainApp {
 			mostrarTorre();
 			
 			if (selector==5) {
-				apagado=true;
+				control=0;
 			}
-		} while (apagado=false);
+		} while (control!=0);
 	}
 
 	
@@ -35,9 +39,6 @@ public class MainApp {
 	
 	//Método mostrarMenu
 	private static void mostrarMenu() {
-		System.out.println("=====================================");
-		System.out.println("Programa simulador. Torre de Ajedrez.");
-		System.out.println("=====================================");
 		System.out.println(" ");
 		System.out.println("1. Crear una torre por defecto.");
 		System.out.println("2. Crear una torre eligiendo su color.");
@@ -49,10 +50,11 @@ public class MainApp {
 	//Método elegirOpcion
 	private static int elegirOpcion() {
 		int opcionMenu;
-		System.out.print("Por favor, elija una de las anteriores opciones: ");
+		
 		do {
+			System.out.print("Por favor, elija una de las anteriores opciones: ");
 			opcionMenu = Entrada.entero();
-		} while (opcionMenu<0 || opcionMenu>5);
+		} while (opcionMenu<1 || opcionMenu>5);
 		return opcionMenu;	
 	}
 	
@@ -116,6 +118,7 @@ public class MainApp {
 		do {
 			System.out.println(" ");
 			System.out.print("Elija una opción entre las anteriores: ");
+			opcionDireccion = Entrada.entero();
 		} while (opcionDireccion<1 || opcionDireccion>6);
 		
 		switch (opcionDireccion) {
@@ -169,14 +172,23 @@ public class MainApp {
 			mostrarMenuDirecciones();	
 			direccion=elegirDireccion();
 			
-			System.out.println(" ");
-			System.out.print("Introduzca ahora el número de pasos que quiere dar: ");
-			pasos = Entrada.entero();
-			
-			try {
-				torre.mover(direccion, pasos);
-			} catch (OperationNotSupportedException e) {
-				System.out.println(e.getMessage());
+			if (direccion.equals(Direccion.ENROQUE_CORTO) || direccion.equals(Direccion.ENROQUE_LARGO)) {
+				try {
+					torre.enrocar(direccion);
+				} catch (OperationNotSupportedException e) {
+					System.out.println(e.getMessage());
+				}
+			} else
+			{
+				System.out.println(" ");
+				System.out.print("Introduzca ahora el número de pasos que quiere dar: ");
+				pasos = Entrada.entero();
+				
+				try {
+					torre.mover(direccion, pasos);
+				} catch (OperationNotSupportedException e) {
+					System.out.println(e.getMessage());
+				}
 			}
 		}
 	}

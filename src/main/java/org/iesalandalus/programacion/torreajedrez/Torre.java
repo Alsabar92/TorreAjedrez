@@ -160,18 +160,18 @@ public class Torre {
 		}
 		switch (direccion) {
 		case ENROQUE_CORTO:
-			if (posicion.getColumna()=='H' && (posicion.getFila()==1 || posicion.getFila()==8))
+			if (posicion.getColumna()=='h' && (posicion.getFila()==1 || posicion.getFila()==8))
 			{
-				setPosicion(new Posicion(posicion.getFila(),'F'));
+				setPosicion(new Posicion(posicion.getFila(),'f'));
 			} else 
 			{
 				throw new OperationNotSupportedException("ERROR: Movimiento de enroque no válido.");
 			}
 			break;
 		case ENROQUE_LARGO:
-			if (posicion.getColumna()=='A' && (posicion.getFila()==1 || posicion.getFila()==8))
+			if (posicion.getColumna()=='a' && (posicion.getFila()==1 || posicion.getFila()==8))
 			{
-				setPosicion(new Posicion(posicion.getFila(),'D'));
+				setPosicion(new Posicion(posicion.getFila(),'d'));
 			}else 
 			{
 				throw new OperationNotSupportedException("ERROR: Movimiento de enroque no válido.");
