@@ -8,8 +8,18 @@ public class MainApp {
 	private static Torre torre;
 	
 	public static void main(String[] args) {
-		
-	
+		boolean apagado=false;
+		int selector;
+		do {
+			mostrarMenu();
+			selector=elegirOpcion();
+			ejecutarOpcion(selector);
+			mostrarTorre();
+			
+			if (selector==5) {
+				apagado=true;
+			}
+		} while (apagado=false);
 	}
 
 	
@@ -188,7 +198,6 @@ public class MainApp {
 			break;
 		case 5:
 			System.out.println("¡Hasta luego!");
-			System.exit(0);
 			break;
 		}
 	}
