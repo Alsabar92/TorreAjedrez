@@ -75,7 +75,7 @@ public class MainApp {
 		char columna = 0;
 		
 		do {
-			System.out.println("Introduzca la columna deseada (A , H): ");
+			System.out.print("Introduzca la columna deseada (A , H): ");
 			columna=Entrada.caracter();
 		} while (columna!='a' && columna!='A' && columna!='h' && columna!='H');
 	
@@ -92,9 +92,42 @@ public class MainApp {
 		System.out.println("4. Mover hacia la derecha.");
 		System.out.println("5. Realizar enroque corto.");
 		System.out.println("6. Realizar enroque largo.");
-		System.out.println("7. Atrás.");
 		System.out.println(" ");
 		System.out.println("============================");
+	}
+	
+	//Método elegirDireccion
+	private static Direccion elegirDireccion() {
+		Direccion direccion = null;
+		int opcionDireccion = 0;
+		
+		do {
+			System.out.println(" ");
+			System.out.print("Elija una opción entre las anteriores: ");
+		} while (opcionDireccion<1 || opcionDireccion>6);
+		
+		switch (opcionDireccion) {
+		case 1:
+			direccion=Direccion.ARRIBA;
+			break;
+		case 2:
+			direccion=Direccion.ABAJO;
+			break;
+		case 3:
+			direccion=Direccion.IZQUIERDA;
+			break;
+		case 4:
+			direccion=Direccion.DERECHA;
+			break;
+		case 5:
+			direccion=Direccion.ENROQUE_CORTO;
+			break;
+		case 6:
+			direccion=Direccion.ENROQUE_LARGO;
+			break;
+		}
+		
+		return direccion;
 	}
 	
 }
