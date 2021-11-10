@@ -71,7 +71,7 @@ public class MainApp {
 	}
 	
 	//Método elegirColumnaInicial
-	private char elegirColumnaInicial() {
+	private static char elegirColumnaInicial() {
 		char columna = 0;
 		
 		do {
@@ -138,6 +138,11 @@ public class MainApp {
 	//Método crearTorreColor
 	private static void crearTorreColor() {
 		torre=new Torre(elegirColor());
+	}
+	
+	//Método crearTorreColorColumna
+	private static void crearTorreColorColumna() {
+		torre=new Torre(elegirColor(), elegirColumnaInicial());
 	}
 	
 }
