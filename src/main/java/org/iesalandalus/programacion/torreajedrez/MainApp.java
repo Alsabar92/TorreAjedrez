@@ -1,5 +1,7 @@
 package org.iesalandalus.programacion.torreajedrez;
 
+import javax.naming.OperationNotSupportedException;
+
 import org.iesalandalus.programacion.utilidades.Entrada;
 
 public class MainApp {
@@ -143,6 +145,30 @@ public class MainApp {
 	//Método crearTorreColorColumna
 	private static void crearTorreColorColumna() {
 		torre=new Torre(elegirColor(), elegirColumnaInicial());
+	}
+	
+	//Método mover
+	private static void mover() {
+		Direccion direccion=null;
+		int pasos;
+		if (torre == null)
+		{
+			System.out.println("ERROR: No existe torre para mover. Antes debe crear una torre.");
+		} else 
+		{
+			mostrarMenuDirecciones();	
+			direccion=elegirDireccion();
+			
+			System.out.println(" ");
+			System.out.print("Introduzca ahora el número de pasos que quiere dar: ");
+			pasos = Entrada.entero();
+			
+			try {
+				torre.mover(direccion, pasos);
+			} catch (OperationNotSupportedException e) {
+				System.out.println(e.getMessage());
+			}
+		}
 	}
 	
 }
