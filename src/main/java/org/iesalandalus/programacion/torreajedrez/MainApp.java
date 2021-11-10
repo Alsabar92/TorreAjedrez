@@ -82,5 +82,19 @@ public class MainApp {
 		return columna;
 	}
 	
+	//Método mostrarMenuDirecciones
+	private static void mostrarMenuDirecciones() {
+		System.out.println("============================");
+		System.out.println(" ");
+		System.out.println("1. Mover hacia arriba.");
+		System.out.println("2. Mover hacia abajo.");
+		System.out.println("3. Mover hacia la izquierda.");
+		System.out.println("4. Mover hacia la derecha.");
+		System.out.println("5. Realizar enroque corto.");
+		System.out.println("6. Realizar enroque largo.");
+		System.out.println("7. Atrás.");
+		System.out.println(" ");
+		System.out.println("============================");
+	}
 	
 }
