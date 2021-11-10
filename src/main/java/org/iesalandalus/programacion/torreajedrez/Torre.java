@@ -35,7 +35,7 @@ public class Torre {
 		
 		if (columna=='A' || columna=='H' || columna=='a' || columna == 'h') 
 		{
-			if (color==Color.BLANCO) 
+			if (color.equals(Color.BLANCO)) 
 			{
 				setPosicion(new Posicion(1,columna));
 			} else
@@ -176,6 +176,8 @@ public class Torre {
 			{
 				throw new OperationNotSupportedException("ERROR: Movimiento de enroque no válido.");
 			} 
+			break;
+		default:
 			break;
 		}
 	}
