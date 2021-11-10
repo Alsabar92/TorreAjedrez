@@ -171,4 +171,26 @@ public class MainApp {
 		}
 	}
 	
+	//Método ejecutarOpcion
+	private static void ejecutarOpcion(int opcionEjecucion) {
+		switch (opcionEjecucion) {
+		case 1:
+			crearTorreDefecto();
+			break;
+		case 2:
+			crearTorreColor();
+			break;
+		case 3:
+			crearTorreColorColumna();
+			break;
+		case 4:
+			mover();
+			break;
+		case 5:
+			System.out.println("¡Hasta luego!");
+			System.exit(0);
+			break;
+		}
+	}
+	
 }
