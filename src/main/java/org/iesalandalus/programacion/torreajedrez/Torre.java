@@ -53,7 +53,7 @@ public class Torre {
 	}
 	
 	public void setColor(Color color) {
-		if (color == null)
+		if (color.equals(null))
 		{
 			throw new NullPointerException("ERROR: No se puede asignar un color nulo.");
 		}
@@ -75,13 +75,13 @@ public class Torre {
 		if (pasos < 1) 
 		{
 			throw new IllegalArgumentException("ERROR: El número de pasos debe ser positivo.");
-		} else if (direccion==null)
+		} else if (direccion.equals(null))
 		{
 			throw new NullPointerException("ERROR: La dirección no puede ser nula.");
 		}
 		switch (direccion) {
 			case ARRIBA:
-				if (color==Color.NEGRO)
+				if (color.equals(Color.NEGRO))
 				{
 					try {
 						setPosicion(new Posicion(posicion.getFila() -pasos , posicion.getColumna()));
@@ -98,7 +98,7 @@ public class Torre {
 				}
 			break;
 			case ABAJO:
-				if (color==Color.NEGRO)
+				if (color.equals(Color.NEGRO))
 				{
 					try {
 						setPosicion(new Posicion(posicion.getFila() +pasos , posicion.getColumna()));
@@ -115,7 +115,7 @@ public class Torre {
 				}
 			break;
 			case IZQUIERDA:
-				if (color==Color.NEGRO)
+				if (color.equals(Color.NEGRO))
 				{
 					try {
 						setPosicion(new Posicion(posicion.getFila() , (char)(posicion.getColumna() +pasos)));
@@ -132,7 +132,7 @@ public class Torre {
 				}
 			break;
 			case DERECHA:
-				if (color==Color.NEGRO)
+				if (color.equals(Color.NEGRO))
 				{
 					try {
 						setPosicion(new Posicion(posicion.getFila() , (char)(posicion.getColumna() -pasos)));
@@ -155,7 +155,7 @@ public class Torre {
 	
 	//Método de enroque
 	public void enrocar (Direccion direccion) throws OperationNotSupportedException {
-		if (direccion==null) {
+		if (direccion.equals(null)) {
 			throw new NullPointerException("ERROR: La dirección no puede ser nula.");
 		}
 		switch (direccion) {
